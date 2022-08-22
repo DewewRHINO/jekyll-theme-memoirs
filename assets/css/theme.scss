@@ -3,11 +3,12 @@
 ---
 
 $brown: #B59F62;
-$teal: #40FFDC;
-$black: #111;
-$primary: $teal;
+$black: #fff;
+$primary: #151617;
 $dark:    $black;
 $enable-rounded: false;
+$card-color: #151617;
+$card-text: #fff;
 
 @import "bootstrap/functions";
 @import 'bootstrap/variables';
@@ -22,10 +23,11 @@ body, input, button, select, optgroup, textarea {
 }
 body {
     line-height:1.7;
-    background: #f4f4f4;
+    background: #1E2022;
+    color: $light;
 }
 a {
-    color: darken($primary, 24%);
+    color: darken($primary, 50%);
 }
 img {
     max-width:100%;
@@ -126,7 +128,7 @@ img, img:hover {
     height: 100%;
     border-right: solid rgba(0, 0, 0, 0.07) 1px;
     z-index: 1022;
-    background:#fff;
+    background:$card-color;
 }
 .nav-icon {
     position: fixed;
@@ -193,7 +195,7 @@ img, img:hover {
     left: 0;
     height: 100%;
     width: 420px;
-    background: #fff;
+    background: $card-color;
     padding: 0;
     margin: 0;
     transform: translate(-100%, 0);
@@ -237,7 +239,7 @@ img, img:hover {
     grid-gap: 30px;
 }
 .blog-grid-item {  
-    color: #333;
+    color: $card-text;
     padding: 0;
     display: flex;
     align-items:center;
@@ -247,8 +249,8 @@ img, img:hover {
         margin-right: 7px;
     }
     .card {
-        border:0;
-        &:hover {           
+	background-color: $card-color;
+	border: 0;
            .card-title a { 
                 background-size: 100% 100%;
             }
@@ -270,13 +272,15 @@ img, img:hover {
         }
     }
     .card-text {
+	color: $card-text;
         font-weight:400;
         font-size:16px;
         line-height:1.8;
         margin-top:15px;
     }
     .card-footer {
-       font-size:14px;
+	background-color: $card-color;
+        font-size:14px;
         border-top:0;
         padding: 1rem 1.25rem;
         a {
@@ -294,7 +298,6 @@ img, img:hover {
         width:100%;
         object-position:top;
     }
-}
 .firstpage {
     .blog-grid-item:nth-child(1) {
         grid-column-start: 1;
@@ -338,7 +341,7 @@ img, img:hover {
     justify-content:center;
     a {
         background: rgba(0,0,0,0.05);
-        color:#000;
+        color:$light;
         cursor:pointer;
         &:hover {
             background: $primary;
@@ -454,7 +457,7 @@ img, img:hover {
     code[class*="language-"], pre[class*="language-"] {
         font-size:15px;
         margin-bottom:30px;
-        background: #fff;
+        background: $light;
         color:inherit;
     }
     div.code-toolbar > .toolbar a, div.code-toolbar > .toolbar button, div.code-toolbar > .toolbar span {
@@ -565,7 +568,7 @@ img, img:hover {
 }
 .lunrsearchresult {
     .title {
-        color:#000;
+        color:$light;
         font-weight:700;
         line-height:1.2;
         display:block;
@@ -603,7 +606,7 @@ body.active-side {
     padding:30px;
     border-top:1px solid $gray-200;
     font-size:15px;
-    background:#fff;
+    background: $card-color;
 }
 
 //responsive tweaks
@@ -729,4 +732,7 @@ body.active-side {
             height:35px;
         }
     }
+}
+h4{
+	color: #fff;
 }
